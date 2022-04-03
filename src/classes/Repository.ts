@@ -3,10 +3,12 @@ import shelljs from "shelljs";
 import fs from "fs";
 import archiver from "archiver";
 
+import { IRepoInfos } from "../types";
+
 import { printMessage } from "../utils";
 
 export default class Repository {
-  public static getRepoInfos(repoURL: string) {
+  public static getRepoInfos(repoURL: string): IRepoInfos {
     return {
       username: repoURL.split("/")[3],
       repoName: repoURL.split("/")[4],
